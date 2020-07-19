@@ -7,15 +7,24 @@ Simple animation for your views and cells
 
 !!!! It's a new pod. Description will be later
 
-[TOC]
+**Table of Contents**
 
++ [ Installation ](#install)
++ [ Usage ](#usage)
+    + [ View animation ](#view)
+        + [ Animation type ](#view-type)
+    + [ Cell animation ](#cell)
+        + [ Animation type ](#cell-type)
+        
+
+<a name="install"></a>
 # Installation
 
 GodAnimation is available through CocoaPods. To install it, simply add the following line to your Podfile:
 ```sh
 pod "GodAnimation"
 ```
-
+<a name="usage"></a>
 # Usage
 
 At first, import GodAnimation in your swift file.
@@ -23,6 +32,7 @@ At first, import GodAnimation in your swift file.
 import "GodAnimation"
 ```
 
+<a name="view"></a>
 ## View animation
 
 Show sample code:
@@ -39,6 +49,7 @@ animatedView  | view to be animated
 vc  | ViewController where the animated view is located
 
 
+<a name="view-type"></a>
 ### Animation type
 
 - fromLeft
@@ -50,6 +61,14 @@ vc  | ViewController where the animated view is located
 - shake
 - buttonTap
 
+| Animation name | Example | Animation name | Example |
+| ------ | ------ | ------ | ------ |
+| fromLeft | ![fromLeft](https://media.giphy.com/media/TJODNeZLP8PFjuaeQB/giphy.gif) | fromTop | ![fromTop](https://media.giphy.com/media/cJBZO1hyKj9q3ILP2E/giphy.gif) |
+| fromRight | ![fromRight](https://media.giphy.com/media/cJ9uWwwjxWNNv5K1Sd/giphy.gif) | fromBottom | ![fromBottom](https://media.giphy.com/media/XZxuxIg3uxmIr7kxU5/giphy.gif) |
+| popIn | ![popIn](https://media.giphy.com/media/kHsM8FowBQ0M0vVqAh/giphy.gif) | popOut | ![popOut](https://media.giphy.com/media/l4qBkbmFv80EcEuKrR/giphy.gif) |
+| shake | ![shake](https://media.giphy.com/media/j03konJGTCv8QKniea/giphy.gif) | buttonTap | ![buttonTap](https://media.giphy.com/media/l4qBkbmFv80EcEuKrR/giphy.gf) |
+
+<a name="cell"></a>
 ## Cells animation
 
 Show sample code:
@@ -59,6 +78,7 @@ GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { 
         }
 ```
 
+<a name="cell-type"></a>
 ### Animation type
 
 - alpha
