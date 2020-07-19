@@ -78,6 +78,26 @@ GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { 
         }
 ```
 
+Parameter  | Description
+------------- | -------------
+type  | animation type
+cell  | cell to be animated
+IndexPath  | cell indexPath
+
+
+Real use example:
+```sh
+func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !shownIndexes.contains(indexPath) {
+            shownIndexes.append(indexPath)
+
+            GodAnimation.cellAnimation(type: .zoom, cell: cell, indexPath: indexPath) { (_) in
+                print("done")
+            }
+        }
+    }
+```
+
 <a name="cell-type"></a>
 ### Animation type
 
@@ -92,3 +112,12 @@ GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { 
 - zoom
 - cardDrop
 - dragFromRight
+
+| Animation name | Example | Animation name | Example |
+| ------ | ------ | ------ | ------ |
+| alpha | ![alpha](https://media.giphy.com/media/ZA5zxKxgVwztWQd912/giphy.gif) | wave | ![wave](https://media.giphy.com/media/UtErDpwAFxEOE2ewBN/giphy.gif) |
+| leftToRight | ![leftToRight](https://media.giphy.com/media/hsUcoWEJY03FJMa9wy/giphy.gif) | topToBottom | ![topToBottom](https://media.giphy.com/media/RhSZo6S4cjTBYvMB4x/giphy.gif) |
+| bounce | ![bounce](https://media.giphy.com/media/MdLwiotWzB2CpT0I2h/giphy.gif) | rightToLeft | ![rightToLeft](https://media.giphy.com/media/dwFFQ2kqxKLXvUFPRf/giphy.gif) |
+| rotate | ![rotate](https://media.giphy.com/media/VIujYx2j6a9K1bHNRv/giphy.gif) | linear | ![linear](https://media.giphy.com/media/U1asbSaMcvoAEy5C1l/giphy.gif) |
+| zoom | ![zoom](https://media.giphy.com/media/fXPhX15rj5s39aJdoJ/giphy.gif) | cardDrop | ![cardDrop](https://media.giphy.com/media/YQN9qDgHNCBiVELKMh/giphy.gif) |
+| dragFromRight | ![dragFromRight](https://media.giphy.com/media/KdC0bZyEL8jPbnFbVM/giphy.gif) |
