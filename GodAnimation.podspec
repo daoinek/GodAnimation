@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "GodAnimation"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Animation for views and cells"
 
   # This description is used to generate tags and improve search results.
@@ -67,7 +67,7 @@ Pod::Spec.new do |spec|
   # spec.platform     = :ios
   # spec.platform     = :ios, "5.0"
 
-  spec.ios.deployment_target = "13.2"
+  spec.ios.deployment_target = "12.4"
   spec.swift_version = "5.0"
 
   #  When using multiple platforms
