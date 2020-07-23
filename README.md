@@ -35,7 +35,7 @@ import "GodAnimation"
 
 Show sample code:
 ```sh
-GodAnimation.animateView(type: .fromLeft, animatedView: view, vc: self) { print("Animation done.") }
+GodAnimation.animateView(type: .fromLeft, animatedView: view, vc: self) { }
 ```
 
 Parameter  | Description
@@ -69,7 +69,7 @@ vc  | ViewController where the animated view is located
 
 Show sample code:
 ```sh
-GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { print("Animation done.") }
+GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { }
 ```
 
 Parameter  | Description
