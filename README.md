@@ -35,9 +35,7 @@ import "GodAnimation"
 
 Show sample code:
 ```sh
-GodAnimation.animateView(type: .fromLeft, animatedView: view, vc: self) { (status) in
-            print("Animation done.")
-        }
+GodAnimation.animateView(type: .fromLeft, animatedView: view, vc: self) { print("Animation done.") }
 ```
 
 Parameter  | Description
@@ -71,9 +69,7 @@ vc  | ViewController where the animated view is located
 
 Show sample code:
 ```sh
-GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { (status) in
-            print("Animation done.")
-        }
+GodAnimation.cellAnimation(type: .cardDrop, cell: cell, indexPath: IndexPath) { print("Animation done.") }
 ```
 
 Parameter  | Description
@@ -89,9 +85,7 @@ func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forR
         if !shownIndexes.contains(indexPath) {
             shownIndexes.append(indexPath)
 
-            GodAnimation.cellAnimation(type: .zoom, cell: cell, indexPath: indexPath) { (_) in
-                print("done")
-            }
+            GodAnimation.cellAnimation(type: .zoom, cell: cell, indexPath: indexPath) { print("Animation done.") }
         }
     }
 ```
