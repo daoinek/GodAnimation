@@ -5,8 +5,6 @@ Simple animation for your views and cells
 [![made-with-swift](https://img.shields.io/badge/Made%20with-Swift-1f425f.svg)](https://developer.apple.com/swift/)
 [![GitHub license](https://img.shields.io/github/license/daoinek/GodAnimation.svg)](https://github.com/daoinek/GodAnimation/blob/master/LICENSE)
 
-!!!! It's a new pod. Description will be later
-
 **Table of Contents**
 
 + [ Installation ](#install)
