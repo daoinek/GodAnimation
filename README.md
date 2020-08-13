@@ -20,7 +20,7 @@ Simple animation for your views and cells
 
 GodAnimation is available through CocoaPods. To install it, simply add the following line to your Podfile:
 ```sh
-pod "GodAnimation"
+pod 'GodAnimation'
 ```
 <a name="usage"></a>
 # Usage
