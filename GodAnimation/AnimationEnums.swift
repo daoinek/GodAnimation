@@ -17,6 +17,10 @@ public enum AnimationType {
     case popOut
     case shake
     case buttonTap
+    case toLeft
+    case toRight
+    case toTop
+    case toBottom
 }
 
 public enum CellAnimationType: String {
@@ -31,4 +35,11 @@ public enum CellAnimationType: String {
     case zoom
     case cardDrop
     case dragFromRight
+}
+
+public enum HorizonType {
+    case left
+    case right
+    case top
+    case bottom
 }

@@ -14,13 +14,13 @@ public final class GodAnimation {
     public static func animateView(type: AnimationType, animatedView: UIView, vc: UIViewController, complition: @escaping ()->Void) {
         switch type {
         case .fromLeft:
-            animationFromLeft(forView: animatedView, inVC: vc, complition: {  complition()})
+            horizonAnimation(type: .left, forView: animatedView, inVC: vc, complition: {  complition()})
         case .fromRight:
-            animationFromRight(forView: animatedView, inVC: vc, complition: {  complition()})
+            horizonAnimation(type: .right, forView: animatedView, inVC: vc, complition: {  complition()})
         case .fromTop:
-            animationFromTop(forView: animatedView, inVC: vc, complition: {  complition()})
+            horizonAnimation(type: .top, forView: animatedView, inVC: vc, complition: {  complition()})
         case .fromBottom:
-            animationFromBottom(forView: animatedView, inVC: vc, complition: {  complition()})
+            horizonAnimation(type: .bottom, forView: animatedView, inVC: vc, complition: {  complition()})
         case .popIn:
             popInAnimation(forView: animatedView, complition: {  complition()})
         case .popOut:
@@ -30,6 +30,14 @@ public final class GodAnimation {
             complition()
         case .buttonTap:
             buttonTapAnimation(view: animatedView, complition: {  complition()})
+        case .toLeft:
+            hideAnimation(type: .left, forView: animatedView, inVC: vc, complition: {  complition()})
+        case .toRight:
+            hideAnimation(type: .right, forView: animatedView, inVC: vc, complition: {  complition()})
+        case .toBottom:
+            hideAnimation(type: .bottom, forView: animatedView, inVC: vc, complition: {  complition()})
+        case .toTop:
+            hideAnimation(type: .top, forView: animatedView, inVC: vc, complition: {  complition()})
         }
     }
     
@@ -65,11 +73,20 @@ public final class GodAnimation {
 }
 
 private extension GodAnimation {
-    private static func animationFromLeft(forView animatedView: UIView, inVC vc: UIViewController, complition: @escaping ()->Void) {
-        let offset = CGPoint(x: -vc.view.frame.maxX, y: 0)
+    private static func horizonAnimation(type: HorizonType, forView animatedView: UIView, inVC vc: UIViewController, complition: @escaping ()->Void) {
+        var offset: CGPoint
+        switch type {
+        case .left:
+            offset = CGPoint(x: -vc.view.frame.maxX, y: 0)
+        case .right:
+            offset = CGPoint(x: vc.view.frame.maxX, y: 0)
+        case .top:
+            offset = CGPoint(x: 0, y: -vc.view.frame.maxY)
+        case .bottom:
+            offset = CGPoint(x: 0, y: vc.view.frame.maxY)
+        }
         let x: CGFloat = 0, y: CGFloat = 0
         animatedView.transform = CGAffineTransform(translationX: offset.x + x, y: offset.y + y)
-    //    animatedView.isHidden = false
         animatedView.alpha = 0
         UIView.animate(
             withDuration: 1, delay: 0.1, usingSpringWithDamping: 0.75, initialSpringVelocity: 3,
@@ -81,52 +98,27 @@ private extension GodAnimation {
         }
     }
     
-    private static func animationFromRight(forView animatedView: UIView, inVC vc: UIViewController, complition: @escaping ()->Void) {
-        let offset = CGPoint(x: vc.view.frame.maxX, y: 0)
+    private static func hideAnimation(type: HorizonType, forView animatedView: UIView, inVC vc: UIViewController, complition: @escaping ()->Void) {
+        var offset: CGPoint
+        switch type {
+        case .left:
+            offset = CGPoint(x: -vc.view.frame.maxX, y: 0)
+        case .right:
+            offset = CGPoint(x: vc.view.frame.maxX, y: 0)
+        case .top:
+            offset = CGPoint(x: 0, y: -vc.view.frame.maxY)
+        case .bottom:
+            offset = CGPoint(x: 0, y: vc.view.frame.maxY)
+        }
         let x: CGFloat = 0, y: CGFloat = 0
-        animatedView.transform = CGAffineTransform(translationX: offset.x + x, y: offset.y + y)
-    //    animatedView.isHidden = false
-        animatedView.alpha = 0
         UIView.animate(
             withDuration: 1, delay: 0.1, usingSpringWithDamping: 0.75, initialSpringVelocity: 3,
             options: .curveEaseOut, animations: {
-                animatedView.transform = .identity
-                animatedView.alpha = 1
+                animatedView.transform = CGAffineTransform(translationX: offset.x + x, y: offset.y + y)
+                animatedView.alpha = 0
         }) { _ in
             complition()
         }
-    }
-
-    
-    
-    private static func animationFromTop(forView animatedView: UIView, inVC vc: UIViewController, complition: @escaping ()->Void) {
-        let offset = CGPoint(x: 0, y: -vc.view.frame.maxY)
-        let x: CGFloat = 0, y: CGFloat = 0
-        animatedView.transform = CGAffineTransform(translationX: offset.x + x, y: offset.y + y)
-        animatedView.isHidden = false
-        UIView.animate(
-            withDuration: 1, delay: 0.7, usingSpringWithDamping: 0.75, initialSpringVelocity: 3,
-            options: .curveEaseOut, animations: {
-                animatedView.transform = .identity
-                animatedView.alpha = 1
-        }) { _ in
-                   complition()
-            }
-    }
-    
-    private static func animationFromBottom(forView animatedView: UIView, inVC vc: UIViewController, complition: @escaping ()->Void) {
-        let offset = CGPoint(x: 0, y: vc.view.frame.maxY)
-        let x: CGFloat = 0, y: CGFloat = 0
-        animatedView.transform = CGAffineTransform(translationX: offset.x + x, y: offset.y + y)
-        animatedView.isHidden = false
-        UIView.animate(
-            withDuration: 1, delay: 0.7, usingSpringWithDamping: 0.75, initialSpringVelocity: 3,
-            options: .curveEaseOut, animations: {
-                animatedView.transform = .identity
-                animatedView.alpha = 1
-        }) { _ in
-                   complition()
-               }
     }
     
     private static func popInAnimation(forView animatedView: UIView, complition: @escaping ()->Void) {
@@ -157,12 +149,10 @@ private extension GodAnimation {
     
     private static func popOutAnimation(forView animatedView: UIView, complition: @escaping ()->Void) {
         animatedView.alpha = 1
-     //   animatedView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         UIView.animate(
             withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 3,
             options: .curveEaseOut, animations: {
                 animatedView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-             //   animatedView.transform = .identity
                 animatedView.alpha = 0
         }, completion: {_ in
             animatedView.transform = .identity
