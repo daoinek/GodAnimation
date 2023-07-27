@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "GodAnimation"
-  spec.version      = "0.0.4"
+  spec.version      = "0.0.5"
   spec.summary      = "Animation for views and cells"
 
   # This description is used to generate tags and improve search results.
@@ -53,9 +53,9 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Kostya Bershov" => "kbershov1@gmail.com" }
-  # Or just: spec.author    = "Kostya Bershov"
-  # spec.authors            = { "Kostya Bershov" => "kbershov1@gmail.com" }
+  spec.author             = { "Kostiantyn Bershov" => "kbershov1@gmail.com" }
+  # Or just: spec.author    = "Kostiantyn Bershov"
+  # spec.authors            = { "Kostiantyn Bershov" => "kbershov1@gmail.com" }
   # spec.social_media_url   = "https://twitter.com/Kostya Bershov"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

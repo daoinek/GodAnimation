@@ -36,10 +36,3 @@ public enum CellAnimationType: String {
     case cardDrop
     case dragFromRight
 }
-
-public enum HorizonType {
-    case left
-    case right
-    case top
-    case bottom
-}
