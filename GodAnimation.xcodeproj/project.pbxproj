@@ -18,7 +18,7 @@
 		6502460E24C467EE00E53266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6502461524C4680900E53266 /* GodAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GodAnimation.swift; sourceTree = "<group>"; };
 		6502461624C4680900E53266 /* AnimationEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEnums.swift; sourceTree = "<group>"; };
-		6539E4FB2CE003E0004F9866 /* GodAnimationPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GodAnimationPackage; path = ../GodAnimationPackage; sourceTree = SOURCE_ROOT; };
+		6539E4FC2CE0051F004F9866 /* GodAnimationPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GodAnimationPackage; path = ../GodAnimationPackage; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +35,6 @@
 		6502460024C467ED00E53266 = {
 			isa = PBXGroup;
 			children = (
-				6539E4FB2CE003E0004F9866 /* GodAnimationPackage */,
 				6502460C24C467EE00E53266 /* GodAnimation */,
 				6502460B24C467EE00E53266 /* Products */,
 			);
@@ -52,6 +51,7 @@
 		6502460C24C467EE00E53266 /* GodAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				6539E4FC2CE0051F004F9866 /* GodAnimationPackage */,
 				6502461524C4680900E53266 /* GodAnimation.swift */,
 				6502461624C4680900E53266 /* AnimationEnums.swift */,
 				6502460D24C467EE00E53266 /* GodAnimation.h */,
