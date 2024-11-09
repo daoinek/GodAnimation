@@ -23,11 +23,11 @@ GodAnimation is available through CocoaPods. To install it, simply add the follo
 ```sh
 pod 'GodAnimation'
 ```
-Upd. Swift Package Manager link:
-```sh
-https://github.com/daoinek/GodAnimation.git
-```
 
+Swift Package Manager
+
+- File > Swift Packages > Add Package Dependency
+- Add https://github.com/daoinek/AnimationTool.git
 
 <a name="usage"></a>
 # Usage
